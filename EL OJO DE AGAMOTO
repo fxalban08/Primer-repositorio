@@ -1,0 +1,598 @@
+#include <iostream>
+#include <cmath>
+#include <conio.h>
+
+//EL OJO DE AGAMOTO
+//El OJO QUE TODO LO VE
+//EL OJO QUE TODO LO RESUELVE
+using std::cin;
+using std::cout;
+using std::endl;
+using std::pow;
+
+int main() {
+	int lit;
+	char g[2];
+	g[0] = 'S';
+	g[1] = 'I';
+	do {
+		do {
+		cout << "Indique que operación desea realizar" << endl;
+		cout << "Ingrese 1 para calcular el área y volumen de un cilindro" << endl;
+		cout << "Ingrese 2 para utilizar la CALCULADORA" << endl;
+		cout << "Ingrese 3 para desplegar los pasos para solicitar un libro en una biblioteca" << endl;
+		cout << "Ingrese 4 para calcular los n primeros numeros primos" << endl;
+		cout << "Ingrese 5 para determinar si el signo de un numero ingresado" << endl;
+		cout << "Ingrese 6 para encontrar el factorial de un numero" << endl;
+		cout << "Ingrese 7 para realizar el ejercicio raro de los 3 numeros" << endl;
+		cout << "Ingrese 8 para determinar el porcentaje de niños y niñas en una escuela" << endl;
+		cout << "Ingrese 9 para encontrar la paridad de un numero" << endl;
+		cout << "Ingrese 10 para determinar si un caracter ingresado es vocal, consontante o numero" << endl;
+		cout << "Ingrese 11 para determinar el dia de la semana" << endl;
+		cout << "Ingrese 12 para conocer el dia del año" << endl;
+		cout << "Ingrese un número" << endl;
+		cin >> lit;
+		getch();
+		} while (lit!=1&&lit!=2&&lit!=3&&lit!=4&&lit!=5&&lit!=6&&lit!=7&&lit!=8&&lit!=9&&lit!=10&&lit!=11&&lit!=12);
+		switch (lit) {
+			case 1:
+				float r;
+				float h;
+				float altura;
+				float area;
+				float volumen;
+				cout<<"Ingrese el valor del radio de la base del cilindro"<<endl;
+				cin>>r;
+				cout<<"Ingrese el valor de la altura del cilindro"<<endl;
+				cin>>h;
+				area= 2*(3.1415)*r*h;
+				volumen= pow(r,2)*3.1415*h;
+				cout<<"El area es: "<<area<<" y el volumen es "<<volumen;
+				break;
+			case 2:
+				float num1;
+	float num2;
+	int num3;
+	char op;
+	float total;
+	float veces;
+	float contador;
+	int ind2;
+	float mult;
+	char x[2];
+	x[0] = 'S';
+	x[1] = 'I';
+	do {
+	cout << "Ingrese un número" << endl;
+	cin >> num1;
+	cout << "Ingrese otro número" << endl;
+	cin >> num2;
+	op = '\0';
+	do {
+		cout << "Indique que operación desea realizar con los números ingresados" << endl;
+		cout << "Ingrese la letra S para sumarlos" << endl;
+		cout << "Ingrese la letra R para restarlos" << endl;
+		cout << "Ingrese la letra M para multiplicarlos" << endl;
+		cout << "Ingrese la letra D para dividirlos" << endl;
+		cout << "Ingrese la letra P para potenciacion" << endl;
+		cout << "Ingrese la letra Z para radicalizacion" << endl;
+		cin >> op;
+	}
+	while (op!='S'&&op!='R'&&op!='M'&&op!='D'&&op!='P'&&op!='Z');
+	switch (op) {
+		case 'S':
+			total = num1+num2;
+			cout << "La respuesta es :" << total << endl;
+			break;
+		case 'R':
+			total = num1-num2;
+			cout << "La respuesta es :" << total << endl;
+			break;
+		case 'M':
+			total = num1*num2;
+			cout << "La respuesta es :" << total << endl;
+			break;
+		case 'D':
+			total = num1/num2;
+			cout << "La respuesta es :" << total << endl;
+			break;
+		case 'P':
+			if (num2==0 && num1!=0) {
+			total = 1;
+		} else {
+			if (num2==0 && num1==0) {
+				cout << "No es posible calcular cero elevado a la cero" << endl;
+			} else {
+				if (num2!=0 && num1==0) {
+					total = 0;
+				} else {
+					if (num2==1 && num1!=0) {
+						total = num1;
+					} else {
+						if (num2!=0 && num1!=0) {
+							if (num2>0) {
+								total = num1;
+								veces = 2;
+								do {
+									total = total*num1;
+									veces = veces+1;
+								} while (veces<=num2);
+								cout << num1 << " elevado a " << num2 << " es igual a " << total << endl;
+							} else {
+								total = num1;
+								veces = 2;
+								do {
+									total = total*num1;
+									veces = veces+1;
+								} while (veces<=-num2);
+								cout << num1 << " elevado a " << num2 << " es igual a " << 1/total << endl;
+							}
+						}
+					}
+				}
+			}
+		}
+			break;
+		case 'Z':
+			num3=num2;
+			if (num3==0) {
+		cout << "No es posible realizar dicha operación" << endl;
+	} else {
+		if (num3==1) {
+			cout << "La respuesta es" << num1 << endl;
+		} else {
+			if (num1==0) {
+				cout << "La respuesta es: 0" << endl;
+			} else {
+				if (num1<0) {
+					if (num3>-1 && num3<1) {
+						if (num3>0) {
+							ind2 = 1/num3;
+							veces = 2;
+							mult = num1;
+							do {
+								mult = mult*num1;
+								veces = veces+1;
+							} while (veces<=ind2);
+							cout << mult << endl;
+						} else {
+							ind2 = -1/num3;
+							veces = 2;
+							mult = num1;
+							do {
+								mult = mult*num1;
+								veces = veces+1;
+							} while (veces<=ind2);
+							cout << 1/mult << endl;
+						}
+					} else {
+						if (num3>0) {
+							if (num3%2==0) {
+								cout << "La respuesta no se halla en los Reales" << endl;
+							} else {
+								contador = 0;
+								do {
+									contador = contador+0.01;
+									mult = contador;
+									veces = 2;
+									do {
+										mult = mult*contador;
+										veces = veces+1;
+									} while (veces<=num3);
+								} while (mult<=-num1);
+								contador = contador-0.01;
+								cout << -contador << endl;
+							}
+						} else {
+							if (num3%2==0) {
+								cout << "La respuesta no se halla en los Reales" << endl;
+							} else {
+								contador = 0;
+								do {
+									contador = contador+0.01;
+									mult = contador;
+									veces = 2;
+									do {
+										mult = mult*contador;
+										veces = veces+1;
+									} while (veces<=-num3);
+								} while (mult<=-num1);
+								contador = contador-0.01;
+								cout << -1/contador << endl;
+							}
+						}
+					}
+				} else {
+					if (num3>-1 && num3<1) {
+						if (num3>0) {
+							ind2 = 1/num3;
+							veces = 2;
+							mult = num1;
+							do {
+								mult = mult*num1;
+								veces = veces+1;
+							} while (veces<=ind2);
+							cout << mult << endl;
+						} else {
+							ind2 = -1/num3;
+							veces = 2;
+							mult = num1;
+							do {
+								mult = mult*num1;
+								veces = veces+1;
+							} while (veces<=ind2);
+							cout << 1/mult << endl;
+						}
+					} else {
+						if (num3>0) {
+							contador = 0;
+							do {
+								contador = contador+0.01;
+								mult = contador;
+								veces = 2;
+								do {
+									mult = mult*contador;
+									veces = veces+1;
+								} while (veces<=num3);
+							} while (mult<=num1);
+							contador = contador-0.01;
+							cout << contador << endl;
+						} else {
+							ind2 = -num3;
+							contador = 0;
+							do {
+								contador = contador+0.01;
+								mult = contador;
+								veces = 2;
+								do {
+									mult = mult*contador;
+									veces = veces+1;
+								} while (veces<=ind2);
+							} while (mult<=num1);
+							contador = contador-0.01;
+							cout << 1/contador << endl;
+						}
+					}
+				}
+			}
+		}
+	}
+			break;
+	}
+	op = '\0';
+	cout << "¿Desea realizar otra operación en la calculadora (SI o NO)?" << endl;
+		cin >> x;
+	} while (!(((x[0]=='N'&& x[1]=='O') || (x[0]=='n'&& x[1]=='o'))));
+				break;
+			case 3:
+				cout << "Entrar a la biblioteca" << endl;
+	cout << "Saludar al bibliotecario" << endl;
+	cout << "Indicar el libro que desea solicitar" << endl;
+	cout << "Esperar a que le traigan el libro" << endl;
+	cout << "Dar datos personales y documento de identificación" << endl;
+	cout << "Recibir el formulario entregado por el bibliotecario" << endl;
+	cout << "Firmar el formulario" << endl;
+	cout << "Tomar el libro" << endl;
+	cout << "Agradecer al bibliotecario" << endl;
+	cout << "Despedir al bibliotecario" << endl;
+	cout << "Salir de la biblioteca" << endl;
+				break;	
+			case 4:
+				float max;
+	float num;
+	cout << "¿Hasta de qué número quieres ver su cuadrado?" << endl;
+	cout << "Quiero ver los cuadrados de los números desde el 1 hasta el ..." << endl;
+	cin >> max;
+	num = 1;
+	do {
+		cout << "El cuadrado de " << num << " es: " << num*num << endl;
+		num = num+1;
+	} while (num<=max);
+				break;
+			case 5:
+			float num5;
+			char resp[2];
+			do {
+				cout << "Ingrese un número" << endl;
+				cin >> num5;
+				if (num5==0) {
+				cout << "El número ingresado es cero o neutro" << endl;
+			} else {
+				if (num5>0) {
+				cout << "El número ingresado es positivo" << endl;
+			} else {
+				cout << "El número ingresado es negativo" << endl;
+			}
+			}
+			resp[0] = '\0';
+			do {
+				cout << "¿Tienes algún otro número del que quieras saber su signo? (SI o NO)" << endl;
+				cin >> resp;
+			} while ((resp[2]=='SI' || resp[2]=='NO'));
+			} while (resp[0]!='N');
+				break;
+			case 6:
+				float cont;
+	float num6;
+	char q[1];
+	float resp6;
+	do {
+		do {
+			cout << "Ingrese el número del que se quiere encontrar el factorial" << endl;
+			cin >> num6;
+		} while (num6<0);
+		cont = num6;
+		resp6 = cont;
+		if (num6==0) {
+			cout << "El factorial de 0 es: " << 1 << endl;
+		} else {
+			if (num6==1) {
+				cout << "El factorial de 1 es: " << 1 << endl;
+			} else {
+				do {
+					cont = cont-1;
+					resp6 = resp6*(cont);
+				} while (cont-1!=0);
+				cout << "El factorial de: " << num6 << " es: " << resp6 << endl;
+			}
+		}
+		q[1] = '\0';
+		do {
+			cout << "¿Desea ingresar otro número?(SI o NO)" << endl;
+			cin >> q;
+		} while (!(q[0]=='S' || q[0]=='N'));
+	} while (q[0]!='N');
+				break;
+			case 7:
+					float num71;
+	float num72;
+	float num73;
+	char resp7[1];
+	do {
+		cout << "Ingrese tres números" << endl;
+		cin >> num71;
+		cin >> num72;
+		cin >> num73;
+		if (num71<0) {
+			cout << "Dado que el primer número es negativo, se procederá a mostrar el producto de los 3 números: " << num71*num72*num73 << endl;
+		} else {
+			cout << "Dado que el primer número NO es negativo, se procederá a mostrar la suma de los 3 números: " << num71+num72+num73 << endl;
+		}
+		do {
+			cout << "¿Quieres hacerlo de nuevo? (SI o NO)" << endl;
+			cin >> resp7;
+		} while (!(resp7[0]=='S' || resp7[0]=='N'));
+	} while (resp7[0]!='N');
+				break;
+			case 8:
+					float m;
+	float mp;
+	char resp8[1];
+	float t;
+	float v;
+	float vp;
+	do {
+		cout << "Ingrese el número de niños" << endl;
+		cin >> v;
+		cout << "Ingrese el número de niñas" << endl;
+		cin >> m;
+		t = v+m;
+		vp = (v*100)/t;
+		mp = 100-vp;
+		cout << "El porcentaje de niños es del: " << vp << "%, y el de niñas es: " << mp << " %" << endl;
+		resp8[0]= '\0';
+		do {
+			cout << "¿Tienes más datos que ingresar? (SI o NO)" << endl;
+			cin >> resp8;
+		} while (!(resp8[0]=='S' || resp8[0]=='N'));
+	} while (resp8[0]!='N');
+				break;
+			case 9:
+				int num9;
+	char resp9[2];
+	do {
+		cout << "Ingrese un número" << endl;
+		cin >> num9;
+		if (num9==0) {
+			cout << "El número ingresado no es par ni impar" << endl;
+		} else {
+			if (num9%2==0) {
+				cout << "El número ingresado es par" << endl;
+			} else {
+				cout << "El número ingresado es impar" << endl;
+			}
+		}
+		do {
+			cout << "¿Tienes algún otro número del que quieras saber su signo? (SI o NO)" << endl;
+			cin >> resp9;
+		} while (!(resp9[0]=='S' || resp9[0]=='N'));
+	} while (resp9[0]!='N');
+				break;
+			case 10:
+				char letra0;
+	cout<<"Ingresa una vocal por favor"<<endl;
+	cin>>letra0;
+	switch (letra0){
+		case 'a':
+			cout<<"Has ingresado la vocal a"<<endl;
+		break;
+		case 'e':
+			cout<<"Has ingresado la vocal e"<<endl;
+		break;
+		case 'i':
+			cout<<"Has ingresado la vocal i"<<endl;
+		break;
+		case 'o':
+			cout<<"Has ingresado la vocal o"<<endl;
+		break;
+		case 'u':
+			cout<<"Has ingresado la vocal u"<<endl;
+		break;
+		case 'A':
+			cout<<"Has ingresado la vocal a"<<endl;
+		break;
+		case 'E':
+			cout<<"Has ingresado la vocal e"<<endl;
+		break;
+		case 'I':
+			cout<<"Has ingresado la vocal i"<<endl;
+		break;
+		case 'O':
+			cout<<"Has ingresado la vocal o"<<endl;
+		break;
+		case 'U':
+			cout<<"Has ingresado la vocal u"<<endl;
+		break;
+		default:
+			cout<<"NO has ingresado ninguna vocal"<<endl;
+		switch (letra0){	
+		case '1':
+			cout<<"Has ingresado el numero 1"<<endl;
+		break;
+		case '2':
+			cout<<"Has ingresado el numero 2"<<endl;
+		break;
+		case '3':
+			cout<<"Has ingresado el numero 3"<<endl;
+		break;
+		case '4':
+			cout<<"Has ingresado el numero 4"<<endl;
+		break;
+		case '5':
+			cout<<"Has ingresado el numero 5"<<endl;
+		break;
+		case '6':
+			cout<<"Has ingresado numero 6"<<endl;
+		break;
+		case '7':
+			cout<<"Has ingresado el numero 7"<<endl;
+		break;
+		case '8':
+			cout<<"Has ingresado el numero 8"<<endl;
+		break;
+		case '9':
+			cout<<"Has ingresado el numero 9"<<endl;
+		break;
+		case '0':
+			cout<<"Has ingresado el numero 0"<<endl;
+		break;
+		default:
+			cout<<"Has ingresado una consonsante"<<endl;
+	}
+	}
+				break;
+			case 11:
+				char letra11[2];
+	cin>>letra11;
+	switch (letra11[0]){
+		case 'L':
+			cout<<"El día de la semana correspondiente es el LUNES \n";
+			break;
+		case 'M':
+			if (letra11[1]=='a'){
+				cout<<"El día de la semana correspondiente es el MARTES \n";
+			} else {
+				if (letra11[1]=='i'){
+					cout<<"El día de la semana correspondiente es el MIERCOLES \n";
+			} else {
+			cout<<"Lo ingresado no tiene sentido \n";
+			}
+			}	
+			break;		
+		case 'J':
+			cout<<"El día de la semana correspondiente es el JUEVESS \n";
+			break;
+		case 'V':
+			cout<<"El día de la semana correspondiente es el VIERNES \n";
+			break;
+		case 'S':
+			cout<<"El día de la semana correspondiente es el SABADO \n";
+			break;
+		case 'D':
+			cout<<"El día de la semana correspondiente es el DOMINGO \n";
+			break;
+		default:
+			cout<<"Has ingresado un caracter no válido \n";
+	}
+				break;
+			case 12:
+					int en=31;
+	int fe;
+	int mar=31;
+	int ab=30;
+	int may=31;
+	int jun=30;
+	int jul=31;
+	int ag=31;
+	int se=30;
+	int oc=31;
+	int no=30;
+	int di=31;
+	int dia;
+	int mes;
+	int ano;
+	int resp12;
+	int total12;
+	cout<<"-------------------QUE DIA DEL AÑO ES?--------------\n";
+	cout<<"Ingrese el año \n";
+	cin>>ano;
+	cout<<"Ingrese el mes \n";
+	cin>>mes;
+	cout<<"Ingrese el dia \n";
+	cin>>dia;
+	if (ano % 4 == 0){
+	fe=29;
+	}else{
+	fe=28;
+	}
+	switch (mes) {
+		case 1:
+			resp12=0;
+		break;
+		case 2:
+			resp12= en;
+		break;
+		case 3:
+			resp12= en+fe;
+		break;
+		case 4:
+			resp12= en+fe+mar;
+		break;
+		case 5:
+			resp12= en+fe+mar+ab;
+		break;
+		case 6:
+			resp12= en+fe+mar+ab+may;
+		break;
+		case 7:
+			resp12= en+fe+mar+ab+may+jun;
+		break;
+		case 8:
+			resp12= en+fe+mar+ab+may+jun+jul;
+		break;
+		case 9:
+			resp12= en+fe+mar+ab+may+jun+jul+ag;
+		break;
+		case 10:
+			resp12= en+fe+mar+ab+may+jun+jul+ag+se;
+		break;
+		case 11:
+			resp12= en+fe+mar+ab+may+jun+jul+ag+se+oc;
+		break;
+		case 12:
+			resp12=  en+fe+mar+ab+may+jun+jul+ag+se+oc+no;
+		break;
+		default:
+			cout<<"El mes es invalido";	
+		}
+	total12= resp12 + dia;
+	cout<<"El dia del año es "<<total12;
+				break;				
+			}
+		cout << "¿Va a utilizar el menú una vez más?" << endl;
+		cin >> g;
+	} while (!(((g[0]=='N'&& g[1]=='O') || (g[0]=='n'&& g[1]=='o'))));
+	return 0;
+}
+
+	
